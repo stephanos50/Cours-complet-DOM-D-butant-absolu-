@@ -26,26 +26,35 @@ Si l’exemple contient un fichier app.js, crée aussi ce fichier à côté de i
 Idée : Le navigateur transforme ton HTML en une arborescence d’objets manipulables en JS.
 Exemple HTML (afficher le titre et le body en console)
 
+1.1-Qu-est-ce-que-le-DOM.html
+
 ### 1.2 Sélectionner des éléments
 Idée : Récupérer un élément pour pouvoir le lire/modifier.
 Exemple HTML (plusieurs sélections)
 
+1.2-Selections.html
+
  
 ### 1.3 Parcourir l’arbre (parents, enfants, voisins)
 Exemple HTML
-  
+
+1.3-Parcourir-l-arbre.html  
 
 ## Module 2 — Modifier contenu, attributs, classes, styles, dataset
 
 ### 2.1 Contenu texte vs HTML
 Idée : textContent = texte brut (sécurisé). innerHTML = interprète du HTML (attention!).
 Exemple HTML
+2.1-Contenu-texte-vs-HTML.html
 ### 2.2 Attributs
 Exemple HTML
+2.2-Attributs.html
 ### 2.3 Classes & styles
 Exemple HTML
+2.3-Classes-et-styles.html
 ### 2.4 Dataset (données personnalisées)
 Exemple HTML
+2.4-Dataset.html
 
 
 ## Module 3 — Créer, insérer et supprimer des éléments
