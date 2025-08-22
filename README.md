@@ -113,7 +113,7 @@ Organisation : garde le JS en bas de page ou utilise <script defer src="app.js">
 ### Mini‑quiz (vérifie ta compréhension)
 
 1. Quelle est la différence entre textContent et innerHTML ?
-2. Comment ajouter un nouvel élément <li> dans une liste <ul> ?
+2. Comment ajouter un nouvel élément `<li> dans une liste <ul>` ?
 3. À quoi sert e preventDefault() sur un formulaire ?
 4. Explique la délégation d’événements en une phrase.
 5. Que permet IntersectionObserver dans une galerie d’images ?
