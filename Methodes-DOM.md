@@ -394,5 +394,5 @@ console.log(cs.backgroundColor);
 4. Explique la **délégation d’événements** en une phrase.
 5. Que permet `IntersectionObserver` dans une galerie d’images ?
 
-> Tu veux un **plan d’entraînement de 7 jours** avec exercices corrigés pour chaque section ? Je peux l’ajouter juste en dessous. 🚀
+�
 
