@@ -111,12 +111,12 @@ Accessibilité : utilise les balises sémantiques (<button>, <nav>, etc.), gère
 Organisation : garde le JS en bas de page ou utilise <script defer src="app.js"></script>.
 
 ### Mini‑quiz (vérifie ta compréhension)
-Quelle est la différence entre textContent et innerHTML ?
-Comment ajouter un nouvel élément <li> dans une liste <ul> ?
-À quoi sert e.preventDefault() sur un formulaire ?
-Explique la délégation d’événements en une phrase.
-Que permet IntersectionObserver dans une galerie d’images ?
-Tu veux un plan d’entraînement de 7 jours avec exercices corrigés pour chaque section ? Je peux l’ajouter juste en dessous. 🚀
+
+1. Quelle est la différence entre textContent et innerHTML ?
+2. Comment ajouter un nouvel élément <li> dans une liste <ul> ?
+3. À quoi sert e.preventDefault() sur un formulaire ?
+4. Explique la délégation d’événements en une phrase.
+5. Que permet IntersectionObserver dans une galerie d’images ?
 
 
 
