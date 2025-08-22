@@ -1,138 +1,144 @@
-# Cours complet DOM — Débutant absolu
 
-Ce paquet contient des **exemples HTML complets** correspondant au cours.
-Ouvrez n'importe quel fichier `.html` dans votre navigateur pour tester.
+# 📘 Cours DOM JavaScript — *De Zéro à Héros*
 
-Arborescence :
-- Module1 à Module6 : notions de base jusqu'aux Observers
-- Projets : mini‑projets concrets
-- Plan7Jours : plan d'entraînement avec exercices et corrigés
+Bienvenue ! Ce dépôt contient un **cours complet** et **pratique** sur la manipulation du **DOM** en JavaScript, pensé pour **débutant absolu**.
+Chaque partie fournit un **exemple HTML complet** prêt à ouvrir dans le navigateur, plus des **exercices guidés** et des **mini‑projets**.
 
+---
 
-# Cours complet sur le DOM en JavaScript — de Zéro à Héros (débutant absolu)
-Ce document part de zéro. Chaque notion a un exemple HTML complet prêt à copier-coller dans un fichier index.html, plus un peu de JS. Ouvre index.html dans ton navigateur et observe le résultat.
+## 🧭 Sommaire rapide
+- `Module1` → Fondamentaux du DOM (document, sélections, navigation)
+- `Module2` → Contenu, attributs, classes, styles, `dataset`
+- `Module3` → Créer / insérer / supprimer + `DocumentFragment`
+- `Module4` → Événements (clic, clavier) + **délégation**
+- `Module5` → Formulaires (`FormData`), validation, `localStorage`
+- `Module6` → Observers : `IntersectionObserver`, `MutationObserver`, `ResizeObserver`
+- `Projets` → 3 mini‑apps concrètes (To‑Do, Modale, Galerie)
+- `Plan7Jours` → Plan d’entraînement **pas‑à‑pas** avec **corrigés**
 
-## Comment utiliser les exemples
-Crée un dossier (par ex. dom-cours/).
-Crée un fichier index.html.
-Copie/colle l’exemple d’une section tel quel dans index.html.
-Ouvre le fichier dans ton navigateur (double-clique).
-Si l’exemple contient un fichier app.js, crée aussi ce fichier à côté de index.html et colle le code JS dedans.
-(Astuce : si tu vois <script defer src="app.js"></script>, ça veut dire qu’il te faut un fichier app.js.)
+> Astuce : chaque fichier `.html` est autonome. **Double‑clique et observe** ✨
 
-## Module 1 — Fondamentaux du DOM
+---
 
-### 1.1 Qu’est-ce que le DOM ?
-Idée : Le navigateur transforme ton HTML en une arborescence d’objets manipulables en JS.
+## 🚀 Démarrage rapide
+1. **Télécharge** le pack (`dom-cours-exemples.zip`) et **décompresse**‑le.
+2. Ouvre un fichier `.html` (double‑clic) → le navigateur s’ouvre.
+3. Lis le code et **modifie** quelques lignes → **recharge** la page pour voir l’effet.
 
-Exemple HTML (afficher le titre et le body en console)
+Option recommandé (confort) : **VS Code + extension “Live Server”**  
+- Clique droit sur un fichier `.html` → **Open with Live Server** (auto‑rechargement).
 
-- 1.1-Qu-est-ce-que-le-DOM.html
+### Alternative en ligne de commande (serveur local simple)
+- **macOS / Linux** : `python3 -m http.server 8000`
+- **Windows** : `py -m http.server 8000`  
+Puis visite `http://localhost:8000` dans ton navigateur.
 
-### 1.2 Sélectionner des éléments
-Idée : Récupérer un élément pour pouvoir le lire/modifier.
+---
 
-Exemple HTML (plusieurs sélections)
+## 📂 Arborescence
+```
+dom-cours/
+├─ README.md                  ← ce fichier
+├─ Module1/                   ← Fondamentaux (DOM, sélection, navigation)
+├─ Module2/                   ← Contenu, attributs, classes, styles, dataset
+├─ Module3/                   ← Créer/Insérer/Supprimer, DocumentFragment
+├─ Module4/                   ← Événements + délégation
+├─ Module5/                   ← Formulaires, validation, localStorage
+├─ Module6/                   ← Observers (Intersection/Mutation/Resize)
+├─ Projets/
+│  ├─ Projet-A-Todo.html
+│  ├─ Projet-B-Modale.html
+│  └─ Projet-C-Galerie.html
+└─ Plan7Jours/                ← Exercices quotidiens + corrigés
+   ├─ J1-A.html  J1-B.html
+   ├─ J2-A.html  J2-B.html
+   ├─ J3-A.html  J3-B.html
+   ├─ J4-A.html  J4-B.html  J4-C.html
+   ├─ J5-A.html  J5-B.html  J5-C.html
+   ├─ J6-A.html  J6-B.html  J6-C.html
+   └─ J7-Projet-Final.html
+```
 
-- 1.2-Selections.html
+---
 
- 
-### 1.3 Parcourir l’arbre (parents, enfants, voisins)
-Exemple HTML
+## 🧩 Comment utiliser les modules
+- **Lis** la description en haut du fichier si présente.
+- **Copie‑colle** le code dans `index.html` (ou ouvre le fichier fourni).
+- **Observe** la console du navigateur (F12 → *Console*) quand le script écrit des `console.log(...)`.
+- **Teste** des variantes (changer texte, classes, attributs, styles, etc.).
 
-- 1.3-Parcourir-l-arbre.html  
+### Points clés par module
+- **Module 1** : `document`, `querySelector(All)`, `getElementById`, navigation (`parentElement`, `children`, `nextElementSibling`, etc.).
+- **Module 2** : `textContent` (sécurisé) vs `innerHTML` (interprète du HTML), `setAttribute/getAttribute`, `classList`, styles inline, `dataset`.
+- **Module 3** : `createElement`, `append/prepend/before/after`, `remove`, **`DocumentFragment`** pour insérer en lot.
+- **Module 4** : `addEventListener`, `e.preventDefault()`, **délégation d’événements** (écouteur sur le parent), gestion clavier (Échap).
+- **Module 5** : `FormData` → objet/paire clé‑valeur, **validation native + personnalisée**, **`localStorage`** (persistance).
+- **Module 6** : **Observers** modernes pour réagir au **viewport** (Intersection), **mutations DOM** (Mutation), **dimensions** (Resize).
 
-## Module 2 — Modifier contenu, attributs, classes, styles, dataset
+---
 
-### 2.1 Contenu texte vs HTML
-Idée : textContent = texte brut (sécurisé). innerHTML = interprète du HTML (attention!).
+## 🏋️ Plan d’entraînement (7 jours)
+Chaque journée ≈ **45–60 min** avec **exercices + corrigés** : ouvre les fichiers `Plan7Jours/Jx-*.html`.
+- **J1** : Découverte DOM, sélection, navigation.
+- **J2** : Contenu, classes, attributs.
+- **J3** : Créer/insérer/supprimer efficacement.
+- **J4** : Événements + délégation + clavier.
+- **J5** : Formulaires, validation, persistance locale.
+- **J6** : Observers (Intersection, Mutation, Resize).
+- **J7** : Mini‑app “Notes” (ajout, suppression, recherche, sauvegarde).
 
-Exemple HTML
+---
 
-- 2.1-Contenu-texte-vs-HTML.html
-### 2.2 Attributs
-Exemple HTML
+## 🧪 Projets inclus
+- **Projet A — To‑Do** : ajouter/supprimer des tâches (DOM + formulaires).
+- **Projet B — Modale** : modale accessible, fermeture sur Échap et clic arrière‑plan.
+- **Projet C — Galerie** : lazy‑load des vignettes + “lightbox” simple.
 
-- 2.2-Attributs.html
-### 2.3 Classes & styles
-Exemple HTML
+Idées d’extensions : tri, édition en ligne, animation, thème sombre, accessibilité renforcée (focus management).
 
-2.3-Classes-et-styles.html
-### 2.4 Dataset (données personnalisées)
-Exemple HTML
+---
 
-- 2.4-Dataset.html
+## 📎 Versions PDF
+Le pack peut être accompagné de PDF : **complet**, **allégé (sans code)**, et **magazine** (avec table des matières).  
+Si tu les as téléchargés, ouvre‑les normalement avec ton lecteur PDF.
 
+---
 
-## Module 3 — Créer, insérer et supprimer des éléments
-### 3.1 Créer & insérer
-Exemple HTML
+## 🛠️ Outils conseillés
+- **Navigateur** : Chrome, Firefox, Edge ou Safari récent.
+- **Éditeur** : VS Code (+ extension *Live Server*), WebStorm, etc.
+- **DevTools** : Inspecteur d’éléments, onglet *Console*, *Network*, *Performance*.
 
-### 3.2 Insertion avant/après un élément
-Exemple HTML
+---
 
-### 3.3 Supprimer
-Exemple HTML
+## ❓ FAQ / Dépannage
+**Je ne vois rien quand j’ouvre le fichier.**  
+→ Ouvre la **Console** (F12) pour voir les messages. Vérifie que le code est bien entre `<script> ... </script>`.
 
-### 3.4 DocumentFragment (insérer beaucoup d’éléments rapidement)
-Exemple HTML
+**Mon image ne s’affiche pas.**  
+→ Vérifie `src` et `alt`, et l’accès internet si l’image est distante (placeholder.com).
 
+**`innerHTML` ne marche pas ?**  
+→ Utilise `textContent` pour du texte pur. `innerHTML` n’interprète que du **HTML valide** (et attention aux **failles XSS** si la source est externe).
 
+**`localStorage` ne garde rien ?**  
+→ Teste dans le même navigateur/onglet. Le stockage est **par origine** (fichier/URL).
 
-## Module 4 — Événements (clic, clavier, délégation)
-### 4.1 Clic
-Exemple HTML
+---
 
-### 4.2 Délégation d’événements (un écouteur pour plusieurs éléments)
-Exemple HTML
+## ✅ Check‑list de fin de parcours
+- [ ] Sélectionner/parcourir le DOM
+- [ ] Modifier contenu/attributs/classes/styles
+- [ ] Créer/insérer/supprimer efficacement (Fragment)
+- [ ] Gérer événements (clic/clavier) + **délégation**
+- [ ] Formulaires (`FormData`), validation, **localStorage**
+- [ ] Utiliser les **Observers**
+- [ ] Réaliser une mini‑app complète
 
-### 4.3 Clavier (touche Échap pour fermer)
-Exemple HTML
+---
 
-### 4.4 Empêcher un comportement par défaut (submit)
-Exemple HTML
+## 🔒 Licence & usage
+Usage libre pour **apprentissage et projets personnels**.  
+Aucune garantie — exemples fournis “en l’état”.
 
-## Module 5 — Formulaires, validation, stockage local
-### 5.1 Récupérer les données d’un formulaire
-Exemple HTML
-
-### 5.2 Validation personnalisée
-Exemple HTML
-
-### 5.3 Stockage local (sauvegarder automatiquement)
-Exemple HTML
-
-## Module 6 — APIs modernes du DOM (Observers)
-### 6.1 IntersectionObserver (lazy-load d’images)
-Exemple HTML
-
-### 6.2 MutationObserver (réagir aux changements du DOM)
-Exemple HTML
-
-### 6.3 ResizeObserver (réagir au redimensionnement d’un élément)
-Exemple HTML
-
-
-# Projets pratiques (avec HTML complet)
-## Projet A — To‑Do List minimaliste (ajouter/supprimer)
-
-## Projet B — Modale accessible (Échap pour fermer)
-## Projet C — Galerie avec lazy‑load & lightbox simple
-
-
-### Bonnes pratiques (simples et essentielles)
-Sécurité : privilégie textContent (évite les failles). N’utilise innerHTML que si nécessaire.
-Performance : insère en lot (utilise DocumentFragment), évite de modifier le DOM à chaque caractère sans besoin.
-Accessibilité : utilise les balises sémantiques (<button>, <nav>, etc.), gère le focus et les libellés ARIA.
-Organisation : garde le JS en bas de page ou utilise <script defer src="app.js"></script>.
-
-### Mini‑quiz (vérifie ta compréhension)
-
-1. Quelle est la différence entre textContent et innerHTML ?
-2. Comment ajouter un nouvel élément `<li> dans une liste <ul>` ?
-3. À quoi sert e preventDefault() sur un formulaire ?
-4. Explique la délégation d’événements en une phrase.
-5. Que permet IntersectionObserver dans une galerie d’images ?
-
-
-
+Bon code ! 💙
