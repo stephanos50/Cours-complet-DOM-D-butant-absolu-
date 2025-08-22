@@ -64,53 +64,53 @@ Exemple HTML
 
 
 ## Module 4 — Événements (clic, clavier, délégation)
-4.1 Clic
+### 4.1 Clic
 Exemple HTML
 
-4.2 Délégation d’événements (un écouteur pour plusieurs éléments)
+### 4.2 Délégation d’événements (un écouteur pour plusieurs éléments)
 Exemple HTML
 
-4.3 Clavier (touche Échap pour fermer)
+### 4.3 Clavier (touche Échap pour fermer)
 Exemple HTML
 
-4.4 Empêcher un comportement par défaut (submit)
+### 4.4 Empêcher un comportement par défaut (submit)
 Exemple HTML
 
-Module 5 — Formulaires, validation, stockage local
-5.1 Récupérer les données d’un formulaire
+## Module 5 — Formulaires, validation, stockage local
+### 5.1 Récupérer les données d’un formulaire
 Exemple HTML
 
-5.2 Validation personnalisée
+### 5.2 Validation personnalisée
 Exemple HTML
 
-5.3 Stockage local (sauvegarder automatiquement)
+### 5.3 Stockage local (sauvegarder automatiquement)
 Exemple HTML
 
-Module 6 — APIs modernes du DOM (Observers)
-6.1 IntersectionObserver (lazy-load d’images)
+## Module 6 — APIs modernes du DOM (Observers)
+### 6.1 IntersectionObserver (lazy-load d’images)
 Exemple HTML
 
-6.2 MutationObserver (réagir aux changements du DOM)
+### 6.2 MutationObserver (réagir aux changements du DOM)
 Exemple HTML
 
-6.3 ResizeObserver (réagir au redimensionnement d’un élément)
+### 6.3 ResizeObserver (réagir au redimensionnement d’un élément)
 Exemple HTML
 
 
-Projets pratiques (avec HTML complet)
-Projet A — To‑Do List minimaliste (ajouter/supprimer)
+# Projets pratiques (avec HTML complet)
+## Projet A — To‑Do List minimaliste (ajouter/supprimer)
 
-Projet B — Modale accessible (Échap pour fermer)
-Projet C — Galerie avec lazy‑load & lightbox simple
+## Projet B — Modale accessible (Échap pour fermer)
+## Projet C — Galerie avec lazy‑load & lightbox simple
 
 
-Bonnes pratiques (simples et essentielles)
+### Bonnes pratiques (simples et essentielles)
 Sécurité : privilégie textContent (évite les failles). N’utilise innerHTML que si nécessaire.
 Performance : insère en lot (utilise DocumentFragment), évite de modifier le DOM à chaque caractère sans besoin.
 Accessibilité : utilise les balises sémantiques (<button>, <nav>, etc.), gère le focus et les libellés ARIA.
 Organisation : garde le JS en bas de page ou utilise <script defer src="app.js"></script>.
 
-Mini‑quiz (vérifie ta compréhension)
+### Mini‑quiz (vérifie ta compréhension)
 Quelle est la différence entre textContent et innerHTML ?
 Comment ajouter un nouvel élément <li> dans une liste <ul> ?
 À quoi sert e.preventDefault() sur un formulaire ?
