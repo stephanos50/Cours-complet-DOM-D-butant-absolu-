@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"><title>localStorage</title></head>
+<body>
+  <form id="f">
+    <input name="nom" placeholder="Votre nom">
+    <button>OK</button>
+  </form>
+
+  <script>
+    const KEY = 'formData';
+    const f = document.getElementById('f');
+
+    // Charger les données sauvegardées
+    const saved = JSON.parse(localStorage.getItem(KEY) || '{}');
+    if (saved.nom) f.elements.nom.value = saved.nom;
+
+    // Sauvegarder à chaque frappe
+    f.addEventListener('input', () => {
+      const data = new FormData(f);
+      localStorage.setItem(KEY, JSON.stringify(Object.fromEntries(data)));
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>J7 — Projet Final</title>
+<style>
+  body{font-family:system-ui;margin:2rem}
+  .row{display:flex;gap:.5rem;margin:.5rem 0}
+  .notes li{display:flex;justify-content:space-between;gap:.5rem}
+</style>
+</head>
+<body>
+  <h1>Notes</h1>
+  <div class="row">
+    <input id="new" placeholder="Nouvelle note"/>
+    <button id="add">Ajouter</button>
+  </div>
+  <div class="row">
+    <input id="q" placeholder="Rechercher..."/>
+  </div>
+  <ul id="list" class="notes"></ul>
+
+  <script>
+    const KEY='notes.v1';
+    const $=s=>document.querySelector(s);
+    let notes=JSON.parse(localStorage.getItem(KEY)||'[]');
+    function save(){ localStorage.setItem(KEY, JSON.stringify(notes)); }
+    function render(filter=''){ const ul=$('#list'); ul.innerHTML='';
+      const frag=document.createDocumentFragment();
+      notes.filter(n=>n.text.toLowerCase().includes(filter.toLowerCase()))
+        .forEach(n=>{ const li=document.createElement('li'); li.dataset.id=n.id;
+          li.innerHTML=`<span>${escapeHtml(n.text)}</span><button aria-label="Supprimer">×</button>`; frag.append(li); });
+      ul.append(frag);
+    }
+    function escapeHtml(s){ return s.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",
+      ">":"&gt;","\"":"&quot;","'":"&#39;"}[c])); }
+
+    $('#add').addEventListener('click',()=>{
+      const inp=$('#new'); const text=inp.value.trim(); if(!text) return;
+      notes.push({id:crypto.randomUUID(), text}); inp.value=''; save(); render($('#q').value);
+    });
+    $('#list').addEventListener('click',e=>{
+      if(!e.target.matches('button')) return;
+      const id=e.target.closest('li').dataset.id;
+      notes=notes.filter(n=>n.id!==id); save(); render($('#q').value);
+    });
+
+    function debounce(fn,d=250){ let t; return (...a)=>{ clearTimeout(t); t=setTimeout(()=>fn(...a),d); }; }
+    $('#q').addEventListener('input', debounce(e=> render(e.target.value), 250));
+
+    render();
+  </script>
+</body></html>

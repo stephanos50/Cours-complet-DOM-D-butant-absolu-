@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>J6-B</title></head>
+<body>
+  <button id="add">Ajouter</button> <ul id="list"></ul>
+  <script>
+    const list=document.getElementById('list');
+    new MutationObserver(muts=>console.log('Ajouts:',muts)).observe(list,{childList:true});
+    document.getElementById('add').addEventListener('click',()=>{ const li=document.createElement('li'); li.textContent='Item '+(list.children.length+1); list.append(li); });
+  </script>
+</body></html>

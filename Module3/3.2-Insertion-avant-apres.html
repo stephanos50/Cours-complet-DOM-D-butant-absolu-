@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"><title>before/after</title></head>
+<body>
+  <p id="ref">Référence</p>
+
+  <script>
+    const ref = document.getElementById('ref');
+    const avant = document.createElement('div');
+    avant.textContent = 'Avant';
+    const apres = document.createElement('div');
+    apres.textContent = 'Après';
+
+    ref.before(avant);
+    ref.after(apres);
+  </script>
+</body>
+</html>

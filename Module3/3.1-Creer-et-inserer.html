@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"><title>Créer/Insérer</title></head>
+<body>
+  <ul id="liste"></ul>
+
+  <script>
+    const ul = document.getElementById('liste');
+    const li = document.createElement('li');
+    li.textContent = 'Nouvel élément';
+    ul.append(li); // ajoute à la fin
+  </script>
+</body>
+</html>

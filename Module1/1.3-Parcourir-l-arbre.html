@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"><title>Arbre</title></head>
+<body>
+  <main id="app">
+    <h2>Section</h2>
+    <p>Paragraphe</p>
+  </main>
+
+  <script>
+    const app = document.getElementById('app');
+    const h2 = app.firstElementChild;           // <h2>
+    const p  = h2.nextElementSibling;           // <p>
+    console.log(app.parentElement.tagName);     // BODY
+    console.log(h2.textContent);                // Section
+    console.log(p.previousElementSibling === h2); // true
+  </script>
+</body>
+</html>

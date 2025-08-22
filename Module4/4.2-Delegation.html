@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"><title>Délégation</title></head>
+<body>
+  <ul id="todos">
+    <li class="todo">Tâche 1</li>
+    <li class="todo">Tâche 2</li>
+    <li class="todo">Tâche 3</li>
+  </ul>
+
+  <script>
+    const ul = document.getElementById('todos');
+    ul.addEventListener('click', (e) => {
+      const li = e.target.closest('.todo');
+      if (!li) return; // cliquer ailleurs ne fait rien
+      li.classList.toggle('done');
+    });
+  </script>
+  <style>.done{ text-decoration: line-through; }</style>
+</body>
+</html>

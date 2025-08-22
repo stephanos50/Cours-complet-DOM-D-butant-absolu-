@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"><title>IntersectionObserver</title></head>
+<body>
+  <h2>Fais défiler la page</h2>
+  <img data-src="https://via.placeholder.com/300x150?text=Image+1" alt="" style="display:block;margin:1000px 0;">
+  <img data-src="https://via.placeholder.com/300x150?text=Image+2" alt="" style="display:block;margin:1000px 0;">
+
+  <script>
+    const io = new IntersectionObserver(entries => {
+      for (const ent of entries) {
+        if (ent.isIntersecting) {
+          const img = ent.target;
+          img.src = img.dataset.src; // on charge l’image quand visible
+          io.unobserve(img);
+        }
+      }
+    });
+
+    document.querySelectorAll('img[data-src]').forEach(img => io.observe(img));
+  </script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>J5-C</title></head>
+<body>
+  <input id="name" placeholder="Nom">
+  <script>
+    const KEY='nom'; const input=document.getElementById('name');
+    input.value=localStorage.getItem(KEY)||'';
+    input.addEventListener('input',()=> localStorage.setItem(KEY, input.value));
+  </script>
+</body></html>

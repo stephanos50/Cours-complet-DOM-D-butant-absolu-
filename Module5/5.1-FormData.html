@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"><title>FormData</title></head>
+<body>
+  <form id="f">
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="text" name="prenom" placeholder="Prénom" required>
+    <button>Valider</button>
+  </form>
+
+  <script>
+    const f = document.getElementById('f');
+    f.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const data = new FormData(f);
+      const obj = Object.fromEntries(data.entries());
+      console.log(obj); // { email: "...", prenom: "..." }
+      alert('Merci ' + obj.prenom + ' !');
+    });
+  </script>
+</body>
+</html>

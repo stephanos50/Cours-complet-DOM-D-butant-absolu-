@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"><title>ToDo</title></head>
+<body>
+  <h1>Mes tâches</h1>
+  <form id="todo-form">
+    <input name="title" placeholder="Ajouter une tâche" required>
+    <button>Ajouter</button>
+  </form>
+  <ul id="list"></ul>
+
+  <script>
+    const form = document.getElementById('todo-form');
+    const list = document.getElementById('list');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const fd = new FormData(form);
+      const title = fd.get('title').trim();
+      if (!title) return;
+      const li = document.createElement('li');
+      li.innerHTML = `${title} <button aria-label="Supprimer">×</button>`;
+      list.append(li);
+      form.reset();
+    });
+
+    list.addEventListener('click', (e) => {
+      if (e.target.matches('button')) e.target.parentElement.remove();
+    });
+  </script>
+</body>
+</html>

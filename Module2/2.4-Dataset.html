@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"><title>Dataset</title></head>
+<body>
+  <button id="user" data-id="42" data-role="admin">Utilisateur</button>
+
+  <script>
+    const btn = document.getElementById('user');
+    console.log(btn.dataset.id);   // "42"
+    console.log(btn.dataset.role); // "admin"
+    btn.dataset.role = 'editor';   // changer la valeur
+  </script>
+</body>
+</html>

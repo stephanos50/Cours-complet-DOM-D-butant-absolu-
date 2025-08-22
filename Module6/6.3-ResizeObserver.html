@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"><title>ResizeObserver</title></head>
+<body>
+  <div id="box" style="width:100px;height:100px;border:1px solid"></div>
+  <button id="grow">Agrandir</button>
+
+  <script>
+    const box = document.getElementById('box');
+    const btn = document.getElementById('grow');
+
+    new ResizeObserver(entries => {
+      for (const e of entries) {
+        console.log('Nouvelle taille :', e.contentRect.width, 'x', e.contentRect.height);
+      }
+    }).observe(box);
+
+    btn.addEventListener('click', () => {
+      const w = box.offsetWidth + 20;
+      const h = box.offsetHeight + 20;
+      box.style.width = w + 'px';
+      box.style.height = h + 'px';
+    });
+  </script>
+</body>
+</html>

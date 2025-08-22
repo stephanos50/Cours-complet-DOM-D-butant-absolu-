@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>J6-A</title></head>
+<body>
+  <img data-src="https://via.placeholder.com/400x200?text=Photo" alt="" style="display:block;margin:1000px 0;">
+  <script>
+    const io=new IntersectionObserver(ents=>{
+      for (const ent of ents){ if(ent.isIntersecting){ const img=ent.target; img.src=img.dataset.src; io.unobserve(img);} }
+    });
+    io.observe(document.querySelector('img'));
+  </script>
+</body></html>

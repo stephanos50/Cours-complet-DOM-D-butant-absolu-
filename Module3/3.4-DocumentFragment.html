@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"><title>Fragment</title></head>
+<body>
+  <ul id="list"></ul>
+
+  <script>
+    const ul = document.getElementById('list');
+    const frag = document.createDocumentFragment();
+    for (let i = 1; i <= 50; i++) {
+      const li = document.createElement('li');
+      li.textContent = 'Item ' + i;
+      frag.append(li);
+    }
+    ul.append(frag); // une seule insertion dans le DOM
+  </script>
+</body>
+</html>

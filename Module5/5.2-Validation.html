@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"><title>Validation</title></head>
+<body>
+  <form id="f">
+    <input type="email" name="email" placeholder="Email" required>
+    <span id="err" style="color:red"></span>
+    <button>Envoyer</button>
+  </form>
+
+  <script>
+    const f = document.getElementById('f');
+    const email = f.elements.email;
+    const err = document.getElementById('err');
+
+    email.addEventListener('input', () => {
+      email.setCustomValidity('');
+      err.textContent = '';
+      if (!email.checkValidity()) {
+        email.setCustomValidity('Email invalide');
+        err.textContent = 'Email invalide';
+      }
+    });
+  </script>
+</body>
+</html>

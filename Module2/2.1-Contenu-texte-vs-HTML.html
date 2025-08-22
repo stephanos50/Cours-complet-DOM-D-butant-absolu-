@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"><title>Contenu</title></head>
+<body>
+  <h1 id="t">Titre</h1>
+  <div id="zone"></div>
+
+  <script>
+    const t = document.getElementById('t');
+    const zone = document.getElementById('zone');
+
+    t.textContent = 'Titre mis à jour';
+    zone.textContent = '<strong>Texte</strong> (affiché en brut)';
+    // Interpréter du HTML (attention aux sources non fiables)
+    zone.innerHTML = '<em>Texte en italique</em>';
+  </script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"><title>Clavier</title></head>
+<body>
+  <div id="modal" style="border:1px solid;padding:1rem;">
+    Modale ouverte — appuie sur Échap pour fermer
+  </div>
+
+  <script>
+    const modal = document.getElementById('modal');
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        modal.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>

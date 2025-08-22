@@ -1,0 +1,9 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>J5-B</title></head>
+<body>
+  <form id="f2"><input type="email" name="email" required placeholder="Email"><span id="err" style="color:red"></span></form>
+  <script>
+    const f2=document.getElementById('f2'); const email=f2.elements.email; const err=document.getElementById('err');
+    email.addEventListener('input',()=>{ email.setCustomValidity(''); err.textContent=''; if(!email.checkValidity()){ email.setCustomValidity('Email invalide'); err.textContent='Email invalide'; } });
+  </script>
+</body></html>

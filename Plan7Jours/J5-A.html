@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>J5-A</title></head>
+<body>
+  <form id="f"><input name="nom" required placeholder="Votre nom"><button>OK</button></form>
+  <p id="out"></p>
+  <script>
+    const f=document.getElementById('f'); const out=document.getElementById('out');
+    f.addEventListener('submit', e=>{ e.preventDefault(); const d=new FormData(f); out.textContent='Bonjour, '+d.get('nom')+' !'; });
+  </script>
+</body></html>

@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"><title>Classes & Styles</title>
+  <style>
+    .box { padding: 1rem; border: 2px solid; }
+    .important { border-color: red; }
+  </style>
+</head>
+<body>
+  <div id="b" class="box">Boîte</div>
+
+  <script>
+    const b = document.getElementById('b');
+    b.classList.add('important');     // ajoute une classe
+    b.classList.toggle('important');  // enlève si présent, sinon ajoute
+    b.style.backgroundColor = 'lightyellow'; // style inline
+  </script>
+</body>
+</html>

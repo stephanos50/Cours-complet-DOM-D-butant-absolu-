@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"><title>preventDefault</title></head>
+<body>
+  <form id="f">
+    <input name="nom" placeholder="Votre nom" required>
+    <button>Envoyer</button>
+  </form>
+  <p id="out"></p>
+
+  <script>
+    const f = document.getElementById('f');
+    const out = document.getElementById('out');
+    f.addEventListener('submit', (e) => {
+      e.preventDefault(); // la page ne se recharge pas
+      const data = new FormData(f);
+      out.textContent = 'Bonjour ' + data.get('nom') + ' !';
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"><title>Attributs</title></head>
+<body>
+  <img id="logo" src="" alt="" width="120">
+
+  <script>
+    const img = document.getElementById('logo');
+    img.setAttribute('src', 'https://via.placeholder.com/120');
+    img.setAttribute('alt', 'Logo de test');
+    console.log(img.getAttribute('alt')); // "Logo de test"
+  </script>
+</body>
+</html>

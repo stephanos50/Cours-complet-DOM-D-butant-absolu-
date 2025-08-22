@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>J6-C</title></head>
+<body>
+  <div id="box" style="width:100px;height:80px;border:1px solid"></div>
+  <button id="grow">Agrandir</button>
+  <script>
+    const box=document.getElementById('box'); const grow=document.getElementById('grow');
+    new ResizeObserver(es=>{ for(const e of es){ console.log('Taille:', e.contentRect.width,'x',e.contentRect.height); } }).observe(box);
+    grow.addEventListener('click',()=>{ box.style.width=box.offsetWidth+20+'px'; box.style.height=box.offsetHeight+10+'px'; });
+  </script>
+</body></html>

@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"><title>Sélections</title></head>
+<body>
+  <h1 id="titre">Titre</h1>
+  <ul>
+    <li class="item">Pomme</li>
+    <li class="item">Poire</li>
+    <li class="item">Banane</li>
+  </ul>
+
+  <script>
+    const parId = document.getElementById('titre');
+    const premierH1 = document.querySelector('h1');
+    const tousItems = document.querySelectorAll('.item');
+
+    console.log(parId.textContent);        // "Titre"
+    console.log(premierH1 === parId);      // true
+    console.log(tousItems.length);         // 3
+  </script>
+</body>
+</html>

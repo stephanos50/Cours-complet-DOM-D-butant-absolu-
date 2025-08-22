@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>J3-A</title></head>
+<body>
+  <ul id="list"></ul>
+  <script>
+    const ul = document.getElementById('list');
+    const frag = document.createDocumentFragment();
+    for(let i=1;i<=100;i++){ const li=document.createElement('li'); li.textContent='Item '+i; frag.append(li);} 
+    ul.append(frag);
+  </script>
+</body></html>

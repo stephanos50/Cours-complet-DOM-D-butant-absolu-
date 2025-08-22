@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>J3-B</title></head>
+<body>
+  <p id="ref">Référence</p>
+  <script>
+    const ref=document.getElementById('ref');
+    const a=document.createElement('p'); a.textContent='Avant'; ref.before(a);
+    const b=document.createElement('p'); b.textContent='Après'; ref.after(b);
+  </script>
+</body></html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"><title>Galerie</title></head>
+<body>
+  <ul id="g"></ul>
+  <div id="lightbox" hidden style="position:fixed;inset:0;background:#000a;display:grid;place-items:center;">
+    <img alt="" id="full" style="max-width:90vw;max-height:90vh;">
+  </div>
+
+  <script>
+    // Générer des vignettes
+    const g = document.getElementById('g');
+    for (let i=1;i<=6;i++){
+      const li = document.createElement('li');
+      li.innerHTML = `<img data-src="https://via.placeholder.com/160x100?text=${i}" alt="Image ${i}" data-full="https://via.placeholder.com/800x500?text=Grande+${i}">`;
+      g.append(li);
+    }
+
+    // Lazy-load
+    const io = new IntersectionObserver(entries=>{
+      for (const ent of entries){
+        if (ent.isIntersecting){
+          const img = ent.target; img.src = img.dataset.src; io.unobserve(img);
+        }
+      }
+    });
+    document.querySelectorAll('#g img').forEach(img=>io.observe(img));
+
+    // Lightbox
+    const lb = document.getElementById('lightbox');
+    const full = document.getElementById('full');
+    g.addEventListener('click', e=>{
+      const img = e.target.closest('img'); if(!img) return;
+      full.src = img.dataset.full; lb.hidden = false;
+    });
+    lb.addEventListener('click', ()=> lb.hidden = true);
+    document.addEventListener('keydown', e=>{ if(e.key==='Escape') lb.hidden = true; });
+  </script>
+</body>
+</html>

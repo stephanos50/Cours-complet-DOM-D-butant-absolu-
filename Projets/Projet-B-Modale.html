@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"><title>Modale</title></head>
+<body>
+  <button id="open">Ouvrir la modale</button>
+
+  <div id="modal" hidden role="dialog" aria-modal="true" style="position:fixed;inset:0;display:grid;place-items:center;background:#0003;">
+    <div style="background:#fff;padding:1rem;min-width:240px;">
+      <p>Bonjour !</p>
+      <button id="close">Fermer</button>
+    </div>
+  </div>
+
+  <script>
+    const modal = document.getElementById('modal');
+    const openBtn = document.getElementById('open');
+    const closeBtn = document.getElementById('close');
+
+    function openModal(){ modal.hidden = false; closeBtn.focus(); }
+    function closeModal(){ modal.hidden = true; openBtn.focus(); }
+
+    openBtn.addEventListener('click', openModal);
+    closeBtn.addEventListener('click', closeModal);
+    document.addEventListener('keydown', e => { if (e.key==='Escape') closeModal(); });
+    modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+  </script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>J4-B</title></head>
+<body>
+  <ul id="todos"><li>Lire</li><li>Coder</li><li>Marcher</li></ul>
+  <style>.done{text-decoration:line-through}</style>
+  <script>
+    document.getElementById('todos').addEventListener('click',e=>{
+      const li=e.target.closest('li'); if(!li) return; li.classList.toggle('done');
+    });
+  </script>
+</body></html>
